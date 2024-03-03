@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    <!-- CDN CSS de BOOTSTRAP  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- CDN de FONTAWSOME pour les ICONES  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <h1>V2_Exercice 1 (90 test_table_complete_Mise_Pratique.html)</h1>
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Ajout stagiaire
+    </button>
+
+    <!--Pour les fenetres modal-->
+    <!--Pour ajouter un stagiaire-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ajout d'un nouveau stagiaire</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="number" class="form-control" id="txtCodeAjout" placeholder="Enter code" name="code">
+                    <label for="code">Code :</label>
+                </div>
+                <div class="form-floating mt-3 mb-3">
+                    <input type="text" class="form-control" id="txtNomAjout" placeholder="Enter nom" name="nom">
+                    <label for="nom">Nom :</label>
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="txtPrenomAjout" placeholder="Enter prenom" name="nom">
+                    <label for="nom">Prénom :</label>
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="txtMailAjout" placeholder="Enter email" name="email">
+                    <label for="email">Mail :</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button id="btn-ajout" type="button" class="btn btn-success">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="zone"></div>
+
+
+
+
+
+
+    <!--Fenetre modal VUE-->
+    <div class="modal fade" id="frmVue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Consultation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="txtCodeVue" placeholder="Enter code" name="code"
+                        readonly>
+                    <label for="code">Code</label>
+                </div>
+                <div class="form-floating mt-3 mb-3">
+                    <input type="text" class="form-control" id="txtNomVue" placeholder="Enter nom" name="nom" readonly>
+                    <label for="nom">Nom</label>
+                </div>
+                <div class="form-floating mt-3 mb-3">
+                    <input type="text" class="form-control" id="txtPrenomVue" placeholder="Enter prenom" name="prenom"
+                        readonly>
+                    <label for="prenom">Prenom</label>
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="txtMailVue" placeholder="Enter email" name="email"
+                        readonly>
+                    <label for="email">Mail</label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Fenetre modif-->
+
+    <div class="modal fade" id="frmModif" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="txtCodeModif" placeholder="Enter code" name="code">
+                    <label for="code">Code</label>
+                </div>
+                <div class="form-floating mt-3 mb-3">
+                    <input type="text" class="form-control" id="txtNomModif" placeholder="Enter password" name="pswd">
+                    <label for="pwd">Nom</label>
+                </div>
+                <div class="form-floating mt-3 mb-3">
+                    <input type="text" class="form-control" id="txtPrenomModif" placeholder="Enter password"
+                        name="pswd">
+                    <label for="pwd">Prenom</label>
+                </div>
+                <div class="form-floating mb-3 mt-3">
+                    <input type="text" class="form-control" id="txtMailModif" placeholder="Enter email" name="email">
+                    <label for="email">Mail</label>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button id="btnModif_enreg" type="button" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fenetre modal SUPPR-->
+    <div class="modal fade" id="frmSuppr" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Suppression</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    SUPPRIMER LA LIGNE ? <input type="text" id="txtCodeSuppr" readonly />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Oui</button>
+                    <button type="button" class="btn btn-danger">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------------
+    		CDN JS pour BOOTSTRAP  
+    	--------------------------------------->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-------------------------------------
+    		Nos fichiers JS  
+    	--------------------------------------->
+    <script src="table.js"></script>
+    <script>
+        //function_modif
+        function modifStagiaire(e) {
+            let valeurs = e.target.value.split(",");
+            document.getElementById("txtCodeModif").value = valeurs[0];
+            document.getElementById("txtNomModif").value = valeurs[1];
+            document.getElementById("txtPrenomModif").value = valeurs[2];
+            document.getElementById("txtMailModif").value = valeurs[3];
+        }
+
+        //function_vue
+        function vueStagiaire(e) {
+            let valeurs = e.target.value.split(",");
+            document.getElementById("txtCodeVue").value = valeurs[0];
+            document.getElementById("txtNomVue").value = valeurs[1];
+            document.getElementById("txtPrenomVue").value = valeurs[2];
+            document.getElementById("txtMailVue").value = valeurs[3];
+        }
+
+        //fonction_suppr
+        function supprStagiaire(e) {
+            let valeurs = e.target.value.split(",");
+            document.getElementById("txtCodeSuppr").value = valeurs[0];
+            document.getElementById("txtLibelleSuppr").value = valeurs[1];
+        }
+
+        //gestion des click sur les boutons VUE MODIF et SUPPR
+        function enregModifStagiaire(e) {
+            let modifLigne = [parseInt
+                (document.getElementById("txtCodeModif").value),
+            document.getElementById("txtNomModif").value,
+            document.getElementById("txtPrenomModif").value,
+            document.getElementById("txtMailModif").value];
+
+            for (let i = 0; i < stagiaires.length; i++) {
+                if (stagiaires[i][0] == modifLigne[0]) {
+                    stagiaires[i][1] = modifLigne[1];
+                    stagiaires[i][2] = modifLigne[2];
+                    stagiaires[i][3] = modifLigne[3];
+                    break; //permet de terminer la boucle
+
+                }
+            }
+            generer();
+        }
+
+
+
+
+
+        //fonction_ajout
+        let btnAjout = document.getElementById("btn-ajout")
+        btnAjout.addEventListener("click", () => {
+            alert("test BTN ajout");
+        }, false);
+
+
+        window.addEventListener("load", (event) => {
+            //création de new class
+            let tab = new Table();
+            tab.id_zone = "zone";
+            tab.class_table = "table table-dark table_hover";
+
+
+            //pour les fenetres Modal Bootstrap (objet JSON) rajoute data-bs-toggle modal etc...
+            tab.BS_toggle_modal = {
+                attribut: "data-bs-toggle",
+                valeur: "modal"
+            };
+            tab.BS_target_vue = {
+                attribut: "data-bs-target",
+                valeur: "#frmVue"
+            };
+            tab.BS_target_modif = {
+                attribut: "data-bs-target",
+                valeur: "#frmModif"
+            }
+            tab.BS_target_suppr = {
+                attribut: "data-bs-target",
+                valeur: "#frmSuppr"
+            };
+
+
+            //data = les données
+            let stagiaires = [[100, "Nom1", "Prenom1", "Mail1"],
+            [200, "Nom2", "Prenom2", "Mail2"],
+            [300, "Nom3", "Prenom3", "Mail3"],
+            [400, "Nom4", "Prenom4", "Mail4"]];
+
+            tab.data = stagiaires;
+            tab.header = ["Code", "Nom", "Prénom", "Mail"];
+            tab.class_modif = "";//class sans Bootstrap
+            tab.class_suppr = "";
+            tab.class_vue = "";
+
+            //BS
+            tab.icone_vue = "fas fa-eye fa-sm";//class pour les icones
+            tab.icone_modif = "fas fa-pencil fa-sm";
+            tab.icone_suppr = "btn-sm fas fa-trash fa-sm";
+
+            //Les méthodes
+            tab.fonction_modif = modifStagiaire;
+            tab.fonction_suppr = supprStagiaire;
+            tab.fonction_vue = vueStagiaire;
+
+            //exo 2
+            tab.BS_class_vue = "btn btn-danger";//Class Bootstrap
+            tab.BS_class_modif = "btn btn-success";
+            tab.BS_class_sppr = "btn btn-warning";
+            // tab.BS_toggle_modal = "";
+            // tab.BS_target_vue = "";
+            // tab.BS_target_modif = "";
+            // tab.BS_target_suppr = "";
+            tab.id_tbody = "idTable";
+            tab.append = true;
+
+
+            tab.separateur = ",";
+            tab.generer();
+
+            // Interception des click sur ENREGISTRER dans les MODAL
+            document.getElementById("btnModif_enreg").addEventListener("click",
+                enregModifStagiaire,
+                false);
+        }, false);
+
+    </script>
+</body>
+
+</html>
