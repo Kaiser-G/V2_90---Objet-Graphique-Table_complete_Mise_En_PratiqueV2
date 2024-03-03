@@ -130,7 +130,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button id="btnModif_enreg" type="button" class="btn btn-primary">Enregistrer</button>
+                    <button id="btnModifEnreg" type="button" class="btn btn-primary">Enregistrer</button>
                 </div>
             </div>
         </div>
@@ -201,11 +201,12 @@
 
         //gestion des click sur les boutons VUE MODIF et SUPPR
         function enregModifStagiaire(e) {
-            let modifLigne = [parseInt
-                (document.getElementById("txtCodeModif").value),
-            document.getElementById("txtNomModif").value,
-            document.getElementById("txtPrenomModif").value,
-            document.getElementById("txtMailModif").value];
+            alert("Modif stagiaire");
+            let modifLigne = [
+                // parseInt(document.getElementById("txtCodeModif").value),
+                document.getElementById("txtNomModif").value,
+                document.getElementById("txtPrenomModif").value,
+                document.getElementById("txtMailModif").value];
 
             for (let i = 0; i < stagiaires.length; i++) {
                 if (stagiaires[i][0] == modifLigne[0]) {
@@ -216,7 +217,8 @@
 
                 }
             }
-            generer();
+            alert("Modif enregistré");
+            affichageTable();
         }
 
 
@@ -256,47 +258,52 @@
             };
 
 
-            //data = les données
+            //stagiaire = data (les données)
             let stagiaires = [[100, "Nom1", "Prenom1", "Mail1"],
             [200, "Nom2", "Prenom2", "Mail2"],
             [300, "Nom3", "Prenom3", "Mail3"],
             [400, "Nom4", "Prenom4", "Mail4"]];
 
-            tab.data = stagiaires;
-            tab.header = ["Code", "Nom", "Prénom", "Mail"];
-            tab.class_modif = "";//class sans Bootstrap
-            tab.class_suppr = "";
-            tab.class_vue = "";
+            function affichageTable() {
+                //data = les données 
+                tab.data = stagiaires;
+                tab.header = ["Code", "Nom", "Prénom", "Mail"];
+                tab.class_modif = "";//class sans Bootstrap
+                tab.class_suppr = "";
+                tab.class_vue = "";
 
-            //BS
-            tab.icone_vue = "fas fa-eye fa-sm";//class pour les icones
-            tab.icone_modif = "fas fa-pencil fa-sm";
-            tab.icone_suppr = "btn-sm fas fa-trash fa-sm";
+                //BS
+                tab.icone_vue = "fas fa-eye fa-sm";//class pour les icones
+                tab.icone_modif = "fas fa-pencil fa-sm";
+                tab.icone_suppr = "btn-sm fas fa-trash fa-sm";
 
-            //Les méthodes
-            tab.fonction_modif = modifStagiaire;
-            tab.fonction_suppr = supprStagiaire;
-            tab.fonction_vue = vueStagiaire;
+                //Les méthodes
+                tab.fonction_modif = modifStagiaire;
+                tab.fonction_suppr = supprStagiaire;
+                tab.fonction_vue = vueStagiaire;
 
-            //exo 2
-            tab.BS_class_vue = "btn btn-danger";//Class Bootstrap
-            tab.BS_class_modif = "btn btn-success";
-            tab.BS_class_sppr = "btn btn-warning";
-            // tab.BS_toggle_modal = "";
-            // tab.BS_target_vue = "";
-            // tab.BS_target_modif = "";
-            // tab.BS_target_suppr = "";
-            tab.id_tbody = "idTable";
-            tab.append = true;
+                //exo 2
+                tab.BS_class_vue = "btn btn-danger";//Class Bootstrap
+                tab.BS_class_modif = "btn btn-success";
+                tab.BS_class_sppr = "btn btn-warning";
+                // tab.BS_toggle_modal = "";
+                // tab.BS_target_vue = "";
+                // tab.BS_target_modif = "";
+                // tab.BS_target_suppr = "";
+                tab.id_tbody = "idTable";
+                tab.append = true;
 
 
-            tab.separateur = ",";
-            tab.generer();
+                tab.separateur = ",";
+                tab.generer();
+            }
 
             // Interception des click sur ENREGISTRER dans les MODAL
-            document.getElementById("btnModif_enreg").addEventListener("click",
-                enregModifStagiaire,
+            document.getElementById("btnModifEnreg").addEventListener("click", enregModifStagiaire,
+
                 false);
+
+            affichageTable();
         }, false);
 
     </script>
